@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-09-19T06:00:00Z",
+  "users": [
+    {
+      "user_principal_name": "alex.admin@example.test",
+      "display_name": "Alex Admin",
+      "source": "on_prem_ad",
+      "enabled": true,
+      "immutable_id": "RkFLRS1JTU1VVEFCTEUx",
+      "roles": ["Global Administrator"],
+      "mfa_registered": false,
+      "last_signin_utc": "2026-09-18T18:10:00Z"
+    },
+    {
+      "user_principal_name": "sam.operator@example.test",
+      "display_name": "Sam Operator",
+      "source": "on_prem_ad",
+      "enabled": true,
+      "immutable_id": "",
+      "roles": [],
+      "mfa_registered": true,
+      "last_signin_utc": "2026-09-17T10:22:00Z"
+    },
+    {
+      "user_principal_name": "duplicate.user@example.test",
+      "display_name": "Duplicate One",
+      "source": "on_prem_ad",
+      "enabled": true,
+      "immutable_id": "RkFLRS1JTU1VVEFCTEUy",
+      "roles": [],
+      "mfa_registered": true,
+      "last_signin_utc": "2026-09-10T12:00:00Z"
+    },
+    {
+      "user_principal_name": "duplicate.user@example.test",
+      "display_name": "Duplicate Two",
+      "source": "on_prem_ad",
+      "enabled": true,
+      "immutable_id": "RkFLRS1JTU1VVEFCTEUz",
+      "roles": [],
+      "mfa_registered": true,
+      "last_signin_utc": "2026-09-11T12:00:00Z"
+    },
+    {
+      "user_principal_name": "cloud.breakglass@example.test",
+      "display_name": "Cloud Breakglass",
+      "source": "cloud",
+      "enabled": true,
+      "immutable_id": null,
+      "roles": ["Privileged Role Administrator"],
+      "mfa_registered": true,
+      "last_signin_utc": "2026-08-01T08:00:00Z"
+    }
+  ],
+  "devices": [
+    {
+      "device_id": "DEV-LAPTOP-001",
+      "owner_upn": "sam.operator@example.test",
+      "trust_type": "Hybrid Azure AD joined",
+      "is_compliant": true,
+      "last_checkin_utc": "2026-09-18T08:00:00Z"
+    },
+    {
+      "device_id": "DEV-OLD-042",
+      "owner_upn": "duplicate.user@example.test",
+      "trust_type": "Hybrid Azure AD joined",
+      "is_compliant": false,
+      "last_checkin_utc": "2026-06-01T08:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "tenant": "example.test lab tenant",
+  "sync": {
+    "last_success_utc": "2026-09-19T04:10:00Z",
+    "password_hash_sync_enabled": false,
+    "pass_through_authentication_enabled": true,
+    "device_writeback_enabled": true,
+    "group_writeback_enabled": false
+  },
+  "federation": {
+    "domains": [
+      {
+        "name": "example.test",
+        "issuer_uri": "urn:example:test",
+        "signing_certificate_expires_utc": "2026-09-25T00:00:00Z"
+      }
+    ]
+  },
+  "pta_agents": [
+    {
+      "hostname": "ID-SYNC-01",
+      "status": "active",
+      "last_heartbeat_utc": "2026-09-19T05:55:00Z"
+    },
+    {
+      "hostname": "ID-SYNC-02",
+      "status": "offline",
+      "last_heartbeat_utc": "2026-09-18T01:00:00Z"
+    }
+  ]
+}

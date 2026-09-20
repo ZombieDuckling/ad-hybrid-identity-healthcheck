@@ -1,0 +1,18 @@
+[
+  {
+    "objectId": "sync-001",
+    "userPrincipalName": "sam.service@example.invalid",
+    "errorCode": "AttributeValueMustBeUnique",
+    "attribute": "proxyAddresses",
+    "firstSeenUtc": "2026-09-01T06:15:00Z",
+    "lastSeenUtc": "2026-09-09T06:15:00Z"
+  },
+  {
+    "objectId": "sync-002",
+    "userPrincipalName": "lee.legacy@example.invalid",
+    "errorCode": "LargeAttributeLength",
+    "attribute": "userCertificate",
+    "firstSeenUtc": "2026-09-12T03:20:00Z",
+    "lastSeenUtc": "2026-09-18T03:20:00Z"
+  }
+]

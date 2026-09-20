@@ -1,0 +1,30 @@
+name: validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate project
+        run: python3 tests/validate_project.py
+      - name: Generate sample report
+        run: >-
+          python3 tools/generate_sample_report.py
+          --users data/synthetic-directory-export.csv
+          --sync-errors data/synthetic-sync-errors.json
+          --rules policies/healthcheck-rules.json
+          --output sample-output/ad-hybrid-healthcheck-report.md

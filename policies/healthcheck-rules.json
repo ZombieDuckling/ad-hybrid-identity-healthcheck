@@ -1,0 +1,34 @@
+{
+  "reviewDateUtc": "2026-09-20T00:00:00Z",
+  "thresholds": {
+    "staleSignInDays": 90,
+    "privilegedPasswordAgeDays": 90,
+    "syncErrorAgeDays": 7
+  },
+  "rules": [
+    {
+      "id": "ID-PRIV-MFA",
+      "severity": "High",
+      "title": "Privileged account without MFA registration",
+      "action": "Confirm the role assignment is still needed, then require MFA registration before privileged use."
+    },
+    {
+      "id": "ID-PRIV-PASSWORD-AGE",
+      "severity": "Medium",
+      "title": "Privileged account password older than threshold",
+      "action": "Review the account lifecycle and rotate or move the account to a stronger privileged-access process."
+    },
+    {
+      "id": "ID-STALE-ACTIVE",
+      "severity": "Medium",
+      "title": "Enabled account with stale interactive sign-in",
+      "action": "Confirm owner and business need before disabling, archiving, or excluding from access."
+    },
+    {
+      "id": "ID-SYNC-ERROR",
+      "severity": "Medium",
+      "title": "Directory sync error older than threshold",
+      "action": "Resolve the source attribute conflict and confirm the object returns to a clean sync state."
+    }
+  ]
+}
