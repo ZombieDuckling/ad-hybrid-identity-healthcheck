@@ -21,6 +21,8 @@ jobs:
           python-version: '3.12'
       - name: Validate project
         run: python3 tests/validate_project.py
+      - name: Run unit tests
+        run: make test
       - name: Generate sample report
         run: >-
           python3 tools/generate_sample_report.py
