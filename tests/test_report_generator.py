@@ -46,6 +46,35 @@ class ReportGeneratorTests(unittest.TestCase):
         ]:
             self.assertIn(rule_id, report)
 
+    def test_checked_in_sample_report_stays_in_sync(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output = Path(tmpdir) / "report.md"
+            subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "tools/generate_sample_report.py"),
+                    "--users",
+                    str(ROOT / "data/synthetic-directory-export.csv"),
+                    "--sync-errors",
+                    str(ROOT / "data/synthetic-sync-errors.json"),
+                    "--rules",
+                    str(ROOT / "policies/healthcheck-rules.json"),
+                    "--output",
+                    str(output),
+                ],
+                check=True,
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+            )
+
+            generated_report = output.read_text(encoding="utf-8")
+
+        checked_in_report = (
+            ROOT / "sample-output/ad-hybrid-healthcheck-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertEqual(checked_in_report, generated_report)
+
 
 if __name__ == "__main__":
     unittest.main()
