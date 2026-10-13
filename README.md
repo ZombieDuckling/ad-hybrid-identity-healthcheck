@@ -40,6 +40,7 @@ Cross-platform validation path:
 
 ```bash
 python3 tests/validate_project.py
+make test
 python3 tools/generate_sample_report.py \
   --users data/synthetic-directory-export.csv \
   --sync-errors data/synthetic-sync-errors.json \
